@@ -1,6 +1,13 @@
 import axios from 'axios';
 import { POKEMON } from './types';
 
+const configRequest = (method) => {
+    return (url) => {
+        return {
+            method, url
+        }
+    }
+}
 
 const pokemonFetchSuccess = (pokemonList) => {
     return {
@@ -29,10 +36,22 @@ export const getPokemonList = () => {
     }
 }
 
-const configRequest = (method) => {
-    return (url) => {
-        return {
-            method, url
+export const filterPokemonList = (list, types, weakness) => {
+    return dispatch => {
+        let finalFilteredList;
+        if (!types.length && !weakness.length) {
+            finalFilteredList = [...list];
+        } else {
+            finalFilteredList = list.filter(item => 
+                types.every(value => item.type.includes(value)) &&
+                weakness.every(value => item.weaknesses.includes(value))
+            )
         }
+        return dispatch({
+            type: POKEMON.POKEMON_FILTER_SUCCESS,
+            payload: {
+                filteredPokemonList: finalFilteredList
+            }
+        })
     }
 }

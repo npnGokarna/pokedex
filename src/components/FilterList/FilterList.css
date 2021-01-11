@@ -1,0 +1,24 @@
+.filter-list-container ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.filter-list-container .list-label {
+    padding-left: .625rem;
+}
+
+.filter-container {
+    display: flex;
+    width: auto;
+    justify-content: space-around;
+}
+
+.filter-container .type-container {
+    padding-right: 4rem;
+}
+
+.filter-button-container {
+    padding-top: 4rem;
+    text-align: center;
+}

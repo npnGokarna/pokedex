@@ -1,0 +1,6 @@
+.pokedex-container {
+    display: flex;
+    width: auto;
+    min-height: 100vh;
+    justify-content: space-around;
+}

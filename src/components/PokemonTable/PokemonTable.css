@@ -1,0 +1,40 @@
+.search-field-container {
+    position: relative;
+    text-align: center;
+}
+
+.search-field {
+    width: 30%;
+    height: 1.5rem;
+}
+
+.empty-page {
+    padding: .875rem .5rem;
+    height: 1rem;
+    text-align: center;
+}
+
+.pokemon-table {
+    width: 100%;
+    min-width: 35rem;
+    border-collapse: collapse;
+}
+
+.pokemon-table tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+
+.table-header {
+    border-bottom: .1rem solid black;
+}
+
+.pokemon-table-row th {
+    text-align: start;
+}
+
+.pokemon-table-row td,
+.pokemon-table-row th {
+    padding: .875rem .5rem;
+    height: 1rem;
+}
