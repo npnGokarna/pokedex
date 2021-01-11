@@ -24,6 +24,12 @@
     background-color: #f4f4f4;
 }
 
+.pokemon-table .pokemon-name {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #2066e9;
+}
+
 
 .table-header {
     border-bottom: .1rem solid black;

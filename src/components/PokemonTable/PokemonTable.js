@@ -1,10 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { useDebounce } from 'use-debounce';
 import './PokemonTable.css';
 
-export function PokemonTable({onClick}) {
+export function PokemonTable() {
     const pokedexList = useSelector(state => state.pokedexReducer.filteredPokemonList);
+    const history = useHistory();
+
     const [searchFieldText, setSearchText] = useState('');
     const [searchKey] = useDebounce(searchFieldText, 500);
     const [filteredList, filterList] = useState([]);
@@ -16,6 +19,11 @@ export function PokemonTable({onClick}) {
 
     const handleChange = (event) => {
         setSearchText(event.target.value);
+    }
+
+    const navigateToDetails = (e) => {
+        const uri = e.target.textContent.toLowerCase();
+        history.push(`/${uri}`);
     }
 
     return (
@@ -37,7 +45,7 @@ export function PokemonTable({onClick}) {
                         {filteredList.map((item, index) => {
                             return (
                                 <tr className="pokemon-table-row" key={index}>
-                                    <td>{item.name}</td>
+                                    <td className="pokemon-name" onClick={navigateToDetails}>{item.name}</td>
                                     <td>{item.num}</td>
                                     <td>{item.type.join(', ')}</td>
                                     <td>{item.weaknesses.join(', ')}</td>

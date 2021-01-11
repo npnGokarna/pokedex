@@ -1,0 +1,29 @@
+.details-container {
+    text-align: center;
+    margin-top: 6rem;
+}
+
+.details-container .available-details>div {
+    padding-bottom: 1rem;
+}
+
+.details-container .back-button-container {
+    padding-bottom: 2rem;
+}
+
+.evolution-container {
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+.evolution-list {
+    display: flex;
+    flex-direction: column;
+}
+.evolution-list>p {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #2066e9;
+    margin-bottom: 0;
+}
